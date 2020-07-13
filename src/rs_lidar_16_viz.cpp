@@ -26,7 +26,7 @@ public:
     lidar_driver_.regExceptionCallback(f_exception_callback);
 
     auto f_pointcloud_callback = std::bind(&LIDARViz::pointCloudCallback, this, std::placeholders::_1);
-    lidar_driver_.regPointRecvCallback(f_pointcloud_callback);
+    lidar_driver_.regRecvCallback(f_pointcloud_callback);
 
     if (!lidar_driver_.init(param))
     {
